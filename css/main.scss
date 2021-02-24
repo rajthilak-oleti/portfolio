@@ -4,6 +4,7 @@ $accent-color: #ff9644;
 $bg-light: #f7f7fa;
 $primary-font: 'Nunito';
 $secondary-font: 'Poppins';
+$signature-font: 'Raleway';
 
 *{ 
   box-sizing: border-box;
@@ -37,6 +38,57 @@ html body{
   100% {font-family: 'Sacramento', cursive;}
 }
 
+.primary-btn {
+  position: relative;
+  font-size: 11.4px;
+  font-weight: 600;
+  border: 0;
+  letter-spacing: 1px;
+  line-height: 40px;
+  width: 150px;
+  text-align: center;
+  text-align: center;
+  min-height: 40px;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 3px;
+  word-wrap: no-wrap;
+
+  &.bg-white {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+  &.bg-dark {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    transform: translateY(40px);
+    transition: all .3s ease-in-out;
+    z-index: -1;
+  }
+  &:hover {
+    color: $primary-color !important;
+    &:after {
+      opacity: 1;
+      transform: translateY(0);
+      background-color: $accent-color;
+    }
+  }
+  &:active {
+    transform: translateY(5px);
+  }
+}
+
 .wrapper {
   width: 100%;
   height: 100%;
@@ -60,6 +112,7 @@ html body{
   padding: 0px 15px;
   box-sizing: border-box;
   transition: all ease-in-out 1s;
+  z-index: 99;
   &.sticky-nav{ 
     background: $secondary-color !important;
     color: white !important;
@@ -73,6 +126,13 @@ html body{
       letter-spacing: -2px;
       position: relative;
       margin: 0px 25px;
+      padding: 0px 8px;
+      font-weight: 800;
+      border: 1px solid $accent-color;
+      letter-spacing: -4px;
+      .dot {
+        color: $accent-color;
+      }
       &:hover {
         animation: font-swapping .8s linear .3s infinite;
       }
@@ -96,7 +156,7 @@ html body{
         content: '<';
         display: inline-block;
         position: absolute;
-        color: $primary-color;
+        color: $accent-color;
         transition: all linear .3s;
         opacity: 0;
       }
@@ -104,7 +164,7 @@ html body{
         content: '>';
         display: inline-block;
         position: absolute;
-        color: $primary-color;
+        color: $accent-color;
         transition: all linear .3s;
         opacity: 0;
       }
@@ -116,7 +176,7 @@ html body{
         }
         &:after {
           opacity: 1;
-          transform: translateX(3px);
+          transform: translateX(5px);
         } 
       }
 
@@ -132,8 +192,30 @@ html body{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8px);
   }
+  .overlay-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100%;
+    .author-info {
+      text-align: center;
+      text-transform: uppercase;
+      font-family: $signature-font;
+      letter-spacing: 5px;
+      .author-name {
+        margin: 10px 0px;
+        font-size: 65px;
+        color: $accent-color;
+      }
+      h4{ 
+        font-size: 20px;
+      }
+    }
+  }
   &.home {
-    background: url('../assets/backgrounds/home-bg.jpg') no-repeat left;
-    background-size: cover;
+    background: url('../assets/backgrounds/home-bg.jpg');
+    background-attachment: fixed;
+    background-position: left;
+    background-repeat: no-repeat;
   }
 }

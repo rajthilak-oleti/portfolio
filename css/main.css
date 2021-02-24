@@ -57,6 +57,66 @@ html body {
   }
 }
 
+.primary-btn {
+  position: relative;
+  font-size: 11.4px;
+  font-weight: 600;
+  border: 0;
+  letter-spacing: 1px;
+  line-height: 40px;
+  width: 150px;
+  text-align: center;
+  text-align: center;
+  min-height: 40px;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 3px;
+  word-wrap: no-wrap;
+}
+
+.primary-btn.bg-white {
+  background-color: #FFFF;
+  color: #000000;
+}
+
+.primary-btn.bg-dark {
+  background-color: #000000;
+  color: #FFFF;
+}
+
+.primary-btn:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  z-index: -1;
+}
+
+.primary-btn:hover {
+  color: #FFFF !important;
+}
+
+.primary-btn:hover:after {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  background-color: #ff9644;
+}
+
+.primary-btn:active {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
 .wrapper {
   width: 100%;
   height: 100%;
@@ -89,6 +149,7 @@ html body {
           box-sizing: border-box;
   -webkit-transition: all ease-in-out 1s;
   transition: all ease-in-out 1s;
+  z-index: 99;
 }
 
 .navbar.sticky-nav {
@@ -103,6 +164,14 @@ html body {
   letter-spacing: -2px;
   position: relative;
   margin: 0px 25px;
+  padding: 0px 8px;
+  font-weight: 800;
+  border: 1px solid #ff9644;
+  letter-spacing: -4px;
+}
+
+.navbar .brand h1 .dot {
+  color: #ff9644;
 }
 
 .navbar .brand h1:hover {
@@ -132,7 +201,7 @@ html body {
   content: '<';
   display: inline-block;
   position: absolute;
-  color: #FFFF;
+  color: #ff9644;
   -webkit-transition: all linear .3s;
   transition: all linear .3s;
   opacity: 0;
@@ -142,7 +211,7 @@ html body {
   content: '>';
   display: inline-block;
   position: absolute;
-  color: #FFFF;
+  color: #ff9644;
   -webkit-transition: all linear .3s;
   transition: all linear .3s;
   opacity: 0;
@@ -160,8 +229,8 @@ html body {
 
 .navbar .nav-list .list-item:hover:after {
   opacity: 1;
-  -webkit-transform: translateX(3px);
-          transform: translateX(3px);
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
 }
 
 .section {
@@ -175,8 +244,40 @@ html body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.section .overlay-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.section .overlay-inner .author-info {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Raleway";
+  letter-spacing: 5px;
+}
+
+.section .overlay-inner .author-info .author-name {
+  margin: 10px 0px;
+  font-size: 65px;
+  color: #ff9644;
+}
+
+.section .overlay-inner .author-info h4 {
+  font-size: 20px;
+}
+
 .section.home {
-  background: url("../assets/backgrounds/home-bg.jpg") no-repeat left;
-  background-size: cover;
+  background: url("../assets/backgrounds/home-bg.jpg");
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
 }
 /*# sourceMappingURL=main.css.map */
