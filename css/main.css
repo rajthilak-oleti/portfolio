@@ -1,1 +1,182 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  color: #FFFF;
+  font-family: "Nunito";
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 15px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #FFFF;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  opacity: 0.5;
+  background-color: #000000;
+}
+
+@-webkit-keyframes font-swapping {
+  0% {
+    font-family: 'Catamaran';
+  }
+  25% {
+    font-family: "Nunito";
+  }
+  50% {
+    font-family: "Poppins";
+  }
+  100% {
+    font-family: 'Sacramento', cursive;
+  }
+}
+
+@keyframes font-swapping {
+  0% {
+    font-family: 'Catamaran';
+  }
+  25% {
+    font-family: "Nunito";
+  }
+  50% {
+    font-family: "Poppins";
+  }
+  100% {
+    font-family: 'Sacramento', cursive;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .content-inner {
+  overflow: hidden auto;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  max-height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all ease-in-out 1s;
+  transition: all ease-in-out 1s;
+}
+
+.navbar.sticky-nav {
+  background: #000000 !important;
+  color: white !important;
+  height: 80px;
+}
+
+.navbar .brand h1 {
+  color: #FFFF;
+  font-family: "Poppins";
+  letter-spacing: -2px;
+  position: relative;
+  margin: 0px 25px;
+}
+
+.navbar .brand h1:hover {
+  -webkit-animation: font-swapping .8s linear .3s infinite;
+          animation: font-swapping .8s linear .3s infinite;
+}
+
+.navbar .nav-list {
+  padding: 0px 10px;
+  margin: 0px 20px;
+  list-style-type: none;
+}
+
+.navbar .nav-list .list-item {
+  display: inline-block;
+  padding: 0px 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar .nav-list .list-item a {
+  text-decoration: none;
+  color: #FFFF;
+}
+
+.navbar .nav-list .list-item:before {
+  content: '<';
+  display: inline-block;
+  position: absolute;
+  color: #FFFF;
+  -webkit-transition: all linear .3s;
+  transition: all linear .3s;
+  opacity: 0;
+}
+
+.navbar .nav-list .list-item:after {
+  content: '>';
+  display: inline-block;
+  position: absolute;
+  color: #FFFF;
+  -webkit-transition: all linear .3s;
+  transition: all linear .3s;
+  opacity: 0;
+}
+
+.navbar .nav-list .list-item:hover {
+  font-weight: 600;
+}
+
+.navbar .nav-list .list-item:hover::before {
+  opacity: 1;
+  -webkit-transform: translateX(-15px);
+          transform: translateX(-15px);
+}
+
+.navbar .nav-list .list-item:hover:after {
+  opacity: 1;
+  -webkit-transform: translateX(3px);
+          transform: translateX(3px);
+}
+
+.section {
+  height: 100vh;
+  width: 100%;
+}
+
+.section .section-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.section.home {
+  background: url("../assets/backgrounds/home-bg.jpg") no-repeat left;
+  background-size: cover;
+}
+/*# sourceMappingURL=main.css.map */
