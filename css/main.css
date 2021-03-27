@@ -286,13 +286,14 @@ html body {
 }
 
 .navigation-fullwidth .navigation-btn {
-  background-color: #FFFF;
-  height: 40px;
-  width: 40px;
+  background-color: #000000;
+  height: 50px;
+  width: 50px;
   position: fixed;
-  top: 30px;
+  top: 15px;
   right: 30px;
   border-radius: 50%;
+  border: none;
   z-index: 2000;
   -webkit-box-shadow: 0 1em 3em rgba(0, 0, 0, 0.1);
           box-shadow: 0 1em 3em rgba(0, 0, 0, 0.1);
@@ -308,8 +309,8 @@ html body {
   width: 40px;
   border-radius: 50%;
   position: fixed;
-  top: 30px;
-  right: 30px;
+  top: 22px;
+  right: 32px;
   background: #ff9644;
   z-index: 999;
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
@@ -361,6 +362,8 @@ html body {
 .navigation-fullwidth .navigation-item a:hover, .navigation-fullwidth .navigation-item a.active {
   background-position: 100%;
   color: #ff9644;
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
 }
 
 .navigation-fullwidth .navigation-checkbox:checked ~ .navigation-background {
@@ -373,8 +376,73 @@ html body {
   width: 100%;
 }
 
+.navigation-fullwidth .navigation-icon {
+  position: relative;
+  margin-top: 25px;
+  width: 2px;
+  height: 2px;
+  display: inline-block;
+}
+
+.navigation-fullwidth .navigation-icon, .navigation-fullwidth .navigation-icon::before, .navigation-fullwidth .navigation-icon::after {
+  width: 20px;
+  height: 2px;
+  background-color: #ff9644;
+  display: inline-block;
+}
+
+.navigation-fullwidth .navigation-icon::before, .navigation-fullwidth .navigation-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.navigation-fullwidth .navigation-icon::before {
+  top: -8px;
+}
+
+.navigation-fullwidth .navigation-icon::after {
+  top: 8px;
+}
+
+.navigation-fullwidth .navigation-btn:hover .navigation-icon::before {
+  top: -9px;
+}
+
+.navigation-fullwidth .navigation-btn:hover .navigation-icon::after {
+  top: 9px;
+}
+
+.navigation-fullwidth .navigation-checkbox:checked + .navigation-btn {
+  border-radius: 50%;
+}
+
+.navigation-fullwidth .navigation-checkbox:checked + .navigation-btn .navigation-icon {
+  background-color: transparent;
+}
+
+.navigation-fullwidth .navigation-checkbox:checked + .navigation-btn .navigation-icon::before {
+  top: 0;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.navigation-fullwidth .navigation-checkbox:checked + .navigation-btn .navigation-icon::after {
+  top: 0;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+@media (min-width: 800px) {
+  .navigation-fullwidth {
+    display: none;
+  }
+}
+
 @media (max-width: 800px) {
-  .navbar {
+  .navbar .nav-list.nav-lg {
     display: none;
   }
 }

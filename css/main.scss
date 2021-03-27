@@ -228,13 +228,14 @@ html body{
     display: none;
   }
   .navigation-btn {
-    background-color: $primary-color;
-    height: 40px;
-    width: 40px;
+    background-color: $secondary-color;
+    height: 50px;
+    width: 50px;
     position: fixed;
-    top: 30px;
+    top: 15px;
     right: 30px;
     border-radius: 50%;
+    border: none;
     z-index: 2000;
     box-shadow: 0 1em 3em rgba($secondary-color, .1);
     text-align: center;
@@ -249,8 +250,8 @@ html body{
     width: 40px;
     border-radius: 50%;
     position: fixed;
-    top: 30px;
-    right: 30px;
+    top: 22px;
+    right: 32px;
     background: $accent-color;
     z-index: 999;
     transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1);
@@ -292,10 +293,12 @@ html body{
       &:hover, &.active {
         background-position: 100%;
         color: $accent-color;
+        transform: translateX(1rem);
       }
     }
   }
 
+  // Functionality
   .navigation-checkbox:checked ~ .navigation-background {
     transform: scale(100);
   } 
@@ -303,10 +306,73 @@ html body{
     opacity: 1;
     width: 100%;
   } 
+
+  // ICON
+  .navigation-icon {
+    position: relative;
+    margin-top: 25px;
+    width: 2px;
+    height: 2px;
+    display: inline-block;
+
+    &, &::before, &::after {
+      width: 20px;
+      height: 2px;
+      background-color: $accent-color;
+      display: inline-block;
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+
+    &::before {top: -8px;}
+    &::after {top: 8px;}
+  }
+
+  .navigation-btn:hover .navigation-icon::before {
+    top: -9px;
+  }
+
+  .navigation-btn:hover .navigation-icon::after {
+    top: 9px;
+  }
+
+  .navigation-checkbox:checked + .navigation-btn{
+    border-radius: 50%;
+  }
+
+  .navigation-checkbox:checked + .navigation-btn .navigation-icon {
+    background-color: transparent;
+  }
+
+  .navigation-checkbox:checked + .navigation-btn .navigation-icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  .navigation-checkbox:checked + .navigation-btn .navigation-icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
+
+@media (min-width: 800px) {
+  .navigation-fullwidth {
+    display: none;
+  }
 }
 
 @media (max-width: 800px) {
   .navbar {
-    display: none;
+    .nav-list {
+      &.nav-lg {
+        display: none;
+      }
+    }
   }
+
 }
