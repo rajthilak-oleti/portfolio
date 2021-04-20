@@ -187,6 +187,9 @@ html body{
 .section {
   height: 100vh;
   width: 100%;
+  &.h-auto {
+    height: auto !important;
+  }
   .section-inner-grid {
     height: 100%;
     max-width: 70%;
@@ -504,6 +507,12 @@ html body{
   }
 }
 
+@media (max-width: 768px) {
+  .section-inner-grid {
+    padding: 20px !important;
+    max-width: 90% !important;
+  }
+}
 @media (min-width: 800px) {
   .navigation-fullwidth {
     display: none;
