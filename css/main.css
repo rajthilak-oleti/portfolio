@@ -236,6 +236,7 @@ html body {
 .section {
   height: 100vh;
   width: 100%;
+  color: #000000;
 }
 
 .section.h-auto {
@@ -270,6 +271,7 @@ html body {
   background-attachment: fixed;
   background-position: left;
   background-repeat: no-repeat;
+  color: #FFFF;
 }
 
 .section.home .section-overlay {
@@ -296,7 +298,6 @@ html body {
   text-transform: uppercase;
   font-family: "Raleway";
   letter-spacing: 5px;
-  margin: auto;
 }
 
 .section.home .section-inner-grid .author-info .author-name {
@@ -446,6 +447,82 @@ html body {
   top: 0;
   height: 100%;
   background: #ff9644;
+}
+
+.section.qualification .qualification-container {
+  width: 100%;
+  margin: 40px 0px;
+}
+
+.section.qualification .qualification-container .col-1-of-2 {
+  min-width: 50%;
+  max-width: 50%;
+}
+
+.section.qualification .qualification-container .col-1-of-2 .section-label {
+  font-family: "Raleway";
+}
+
+.section.qualification .qualification-container .col-1-of-2 .qualification-item-wrapper .qualification-item {
+  padding: 20px;
+  margin: 10px 0px;
+  position: relative;
+}
+
+.section.qualification .qualification-container .col-1-of-2 .qualification-item-wrapper .qualification-item .disc {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ff9644;
+  border-radius: 30px;
+  position: absolute;
+  left: -15px;
+  top: 25px;
+}
+
+.section.qualification .qualification-container .col-1-of-2 .qualification-item-wrapper .qualification-item .disc .disc-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.section.qualification .qualification-container .col-1-of-2 .qualification-item-wrapper .qualification-item .disc .disc-inner .dot {
+  width: 60%;
+  height: 60%;
+  background-color: #ff9644;
+  border-radius: 50%;
+  position: absolute;
+  margin: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.section.qualification .qualification-container .col-1-of-2 .qualification-item-wrapper .qualification-item .disc .disc-inner:after {
+  content: '';
+  width: 2px;
+  height: 75px;
+  background-color: #ff9644;
+  position: absolute;
+  top: 28px;
+  left: 12px;
+}
+
+.section.qualification .qualification-container .col-1-of-2 .qualification-item-wrapper .qualification-item .qualification-item-content {
+  margin-left: 20px;
+}
+
+.section.qualification .qualification-container .col-1-of-2 .qualification-item-wrapper .qualification-item .qualification-item-content .qualification-title {
+  font-family: "Raleway";
+  margin: 5px 0px;
+}
+
+.section.qualification .qualification-container .col-1-of-2 .qualification-item-wrapper .qualification-item .qualification-item-content .qualification-location {
+  color: #5e5d5d;
+  margin: 5px 0px;
+}
+
+.section.qualification .qualification-container .col-1-of-2 .qualification-item-wrapper .qualification-item .qualification-item-content .duration {
+  margin-top: 20px;
+  color: #ff9644;
 }
 
 .navigation-fullwidth .navigation-checkbox {
