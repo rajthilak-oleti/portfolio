@@ -341,7 +341,7 @@ html body{
 
 
   &.expertise{
-    background-color: #dae4eb;
+    background-color: #F1F4FB;
     color: $secondary-color;
     .progress-container {
       min-width: 50%;
@@ -458,7 +458,6 @@ html body{
         .icon-container {
           width: 65px;
           height: 65px;
-          border: 1px solid $accent-color;
           border-radius: 5px;
           background-color: lighten($accent-color, 30%);
           .icon {
@@ -487,6 +486,102 @@ html body{
         }
 
 
+      }
+    }
+  }
+
+  &.portfolio {
+    background-color: #F1F4FB !important;
+    .portfolio-nav {
+      .portfolio-nav-list {
+        list-style-type: none;
+        padding-left: 0;
+        margin-left: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+          display: inline-block;
+          padding: 10px 20px;
+          margin: 10px 20px;
+          font-family: $signature-font;
+          border-radius: 5px;
+          font-size: 18px;
+          text-transform: uppercase;
+          .icon {
+            margin-right: 5px;
+            font-size: 20px;
+          }
+          &.active {
+            background-color: $accent-color;
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    .portfolio-card-deck {
+      padding: 20px;
+      .portfolio-card {
+        border-radius: 10px;
+        border: 1px solid grey;
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+        &:hover {
+          border: none !important;
+          img {
+            transform: scale(1.5);
+          }
+          .card-overlay {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.8px);
+            .project-title, .pills-container {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          max-height: 100%;
+          transition: all .3s ease-in-out;
+        }
+        .card-overlay {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 10px;
+          transition: all .3s ease-in-out;
+
+          .project-title {
+            transform: translateX(-100px);
+            opacity: 0;
+            color: $accent-color;
+            font-size: 20px;
+            letter-spacing: 2px;
+            text-align: center;
+            transition: all .5s ease-in;
+          }
+          .pills-container {
+            transform: translateX(100px);
+            opacity: 0;
+            padding: 5px 5px;
+            color: $primary-color;
+            margin: 0 auto;
+            max-width: 50%;
+            transition: all .5s ease-in;
+            .pill {
+              border-radius: 5px;
+              border: 1px solid $accent-color;
+              padding: 5px 10px;
+              text-align: center;
+              margin: 10px 5px;
+            }
+          }
+        }
       }
     }
   }
