@@ -1,3 +1,55 @@
+@-webkit-keyframes btnZoom {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: .5;
+    -webkit-transform: scale(1.2, 1.5);
+            transform: scale(1.2, 1.5);
+  }
+  50% {
+    opacity: .3;
+    -webkit-transform: scale(1.5, 1.7);
+            transform: scale(1.5, 1.7);
+  }
+  70% {
+    opacity: .2;
+    -webkit-transform: scale(1.7, 2);
+            transform: scale(1.7, 2);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2, 2.2);
+            transform: scale(2, 2.2);
+  }
+}
+
+@keyframes btnZoom {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: .5;
+    -webkit-transform: scale(1.2, 1.5);
+            transform: scale(1.2, 1.5);
+  }
+  50% {
+    opacity: .3;
+    -webkit-transform: scale(1.5, 1.7);
+            transform: scale(1.5, 1.7);
+  }
+  70% {
+    opacity: .2;
+    -webkit-transform: scale(1.7, 2);
+            transform: scale(1.7, 2);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2, 2.2);
+            transform: scale(2, 2.2);
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -65,7 +117,6 @@ html body {
   letter-spacing: 1px;
   line-height: 40px;
   width: 150px;
-  text-align: center;
   text-align: center;
   min-height: 40px;
   display: inline-block;
@@ -175,8 +226,8 @@ html body {
 }
 
 .navbar .brand h1:hover {
-  -webkit-animation: font-swapping .8s linear .3s infinite;
-          animation: font-swapping .8s linear .3s infinite;
+  -webkit-animation: font-swapping 0.8s cubic-bezier(0.86, 0, 0.07, 1) 0.3s infinite;
+          animation: font-swapping 0.8s cubic-bezier(0.86, 0, 0.07, 1) 0.3s infinite;
 }
 
 .navbar .nav-list {
@@ -537,6 +588,7 @@ html body {
 
 .section.services .service-card-deck {
   padding: 20px;
+  float: left;
 }
 
 .section.services .service-card-deck .service-card {
@@ -622,6 +674,7 @@ html body {
 
 .section.portfolio .portfolio-card-deck {
   padding: 20px;
+  float: left;
 }
 
 .section.portfolio .portfolio-card-deck .portfolio-card {
@@ -701,6 +754,263 @@ html body {
   padding: 5px 10px;
   text-align: center;
   margin: 10px 5px;
+}
+
+.section.contactMe .contactMe-container {
+  width: 100%;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 {
+  min-width: 50%;
+  max-width: 50%;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .section-label-small {
+  font-family: "Raleway";
+  font-size: 16px;
+  text-decoration: underline;
+  color: #ff9644;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .section-label {
+  font-family: "Raleway";
+  font-size: 28px;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contact-item-container .contact-item:first-child {
+  margin-top: 20px;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contact-item-container .contact-item {
+  min-width: 100% !important;
+  max-width: 100% !important;
+  height: 50px;
+  margin: 50px 0px;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contact-item-container .contact-item .icon-container {
+  float: left;
+  width: 50px;
+  height: 100%;
+  text-align: center;
+  padding: 5px;
+  margin-right: 15px;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contact-item-container .contact-item .icon-container .icon {
+  font-size: 40px !important;
+  vertical-align: middle;
+  color: #ff9644;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contact-item-container .contact-item .info-container {
+  height: 100%;
+  float: left;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contact-item-container .contact-item .label, .section.contactMe .contactMe-container .col-1-of-2 .contact-item-container .contact-item .value {
+  display: block;
+  text-decoration: none;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contact-item-container .contact-item .label {
+  text-transform: uppercase;
+  color: grey;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contact-item-container .contact-item .value {
+  font-size: 25px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  color: inherit;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contact-item-container .contact-item .value:hover {
+  color: #ff9644;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container {
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container {
+  width: 100%;
+  margin: 10px 0px;
+  position: relative;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container .icon {
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 15px;
+  color: #ff9644;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container input, .section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container textarea {
+  width: 100%;
+  height: 50px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 700;
+  -webkit-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #000000;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container input::-webkit-input-placeholder, .section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container textarea::-webkit-input-placeholder {
+  text-transform: capitalize;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container input:-ms-input-placeholder, .section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container textarea:-ms-input-placeholder {
+  text-transform: capitalize;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container input::-ms-input-placeholder, .section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container textarea::-ms-input-placeholder {
+  text-transform: capitalize;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container input::placeholder, .section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container textarea::placeholder {
+  text-transform: capitalize;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container input.input-with-icon {
+  padding: 0px 0px 0px 50px;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container input:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container input:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container input:focus::placeholder {
+  opacity: 0;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .input-container textarea {
+  resize: none;
+  padding: 10px;
+  min-height: 180px;
+}
+
+.section.contactMe .contactMe-container .col-1-of-2 .contactMe-form-container .submit-btn {
+  font-size: 15px;
+  background-color: #000000;
+  color: #FFFF;
+}
+
+.section.socialProfiles {
+  background-color: #ffdec4;
+}
+
+.section.socialProfiles .section-inner-grid {
+  padding: 10px;
+}
+
+.section.socialProfiles .section-inner-grid .social-icons-container {
+  margin: 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 0px;
+}
+
+.section.socialProfiles .section-inner-grid .social-icons-container .icon-container {
+  float: left;
+  margin: 0px 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.section.socialProfiles .section-inner-grid .social-icons-container .icon-container:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000000;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.section.socialProfiles .section-inner-grid .social-icons-container .icon-container .icon-container-inner {
+  border: 1px solid #000000;
+  padding: 10px 15px;
+}
+
+.section.socialProfiles .section-inner-grid .social-icons-container .icon-container .icon-container-inner .icon {
+  color: #000000;
+}
+
+.section.socialProfiles .section-inner-grid .social-icons-container .icon-container:hover {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.section.socialProfiles .section-inner-grid .social-icons-container .icon-container:hover:after {
+  -webkit-animation: btnZoom .5s linear;
+          animation: btnZoom .5s linear;
+}
+
+.section.socialProfiles .section-inner-grid .social-icons-container .icon-container:hover .icon {
+  color: #FFFF;
+}
+
+.section.socialProfiles .section-inner-grid .copy-rights {
+  margin: 20px 0px 0px 0px;
+}
+
+.section.socialProfiles .section-inner-grid .copy-rights .copyrights-text {
+  text-align: center;
+}
+
+.section.socialProfiles .section-inner-grid .copy-rights .copyrights-text .author-name {
+  margin: 0px 2px;
+  padding: 0px 6px;
+  position: relative;
+  font-weight: 800;
+  letter-spacing: 1px;
+  z-index: 0;
+  font-family: "Raleway";
+}
+
+.section.socialProfiles .section-inner-grid .copy-rights .copyrights-text .author-name::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  -webkit-transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+  z-index: -1;
+  background-color: #000000;
+}
+
+.section.socialProfiles .section-inner-grid .copy-rights:hover .author-name {
+  color: #ff9644;
+}
+
+.section.socialProfiles .section-inner-grid .copy-rights:hover .author-name::after {
+  width: 100%;
 }
 
 .navigation-fullwidth .navigation-checkbox {
@@ -862,6 +1172,9 @@ html body {
     padding: 20px !important;
     max-width: 90% !important;
   }
+  .col-1-of-3 {
+    max-width: 100% !important;
+  }
 }
 
 @media (min-width: 800px) {
@@ -876,11 +1189,17 @@ html body {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 992px) {
+  .col-1-of-3 {
+    max-width: 50% !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
   .col-1-of-2 {
     max-width: 100% !important;
   }
-  .col-1-of-3 {
+  .service-card-deck {
     max-width: 100% !important;
   }
 }
@@ -891,9 +1210,14 @@ html body {
     max-width: 50%;
   }
   .col-1-of-3 {
-    float: left;
     min-width: 33.333333%;
     max-width: 33.333333% !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1400px) {
+  .service-card-deck {
+    max-width: 50% !important;
   }
 }
 /*# sourceMappingURL=main.css.map */
