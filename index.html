@@ -43,13 +43,13 @@
           <h1>R <span class="dot">.</span></h1>
         </div>
         <ul class="nav-list nav-lg">
-          <li class="list-item"><a href="" class="list-item-link">Home</a></li>
-          <li class="list-item"><a href="" class="list-item-link">My Intro</a></li>
-          <li class="list-item"><a href="" class="list-item-link">Skills</a></li>
-          <li class="list-item"><a href="" class="list-item-link">Services</a></li>
-          <li class="list-item"><a href="" class="list-item-link">Resume</a></li>
-          <li class="list-item"><a href="" class="list-item-link">Portfolio</a></li>
-          <li class="list-item"><a href="" class="list-item-link">Contact</a></li>
+          <li class="list-item home active"><a href="javascript:void(0)" class="list-item-link">Home</a></li>
+          <li class="list-item intro"><a href="javascript:void(0)" class="list-item-link">My Intro</a></li>
+          <li class="list-item skills"><a href="javascript:void(0)" class="list-item-link">Skills</a></li>
+          <li class="list-item resume"><a href="javascript:void(0)" class="list-item-link">Resume</a></li> 
+          <li class="list-item services"><a href="javascript:void(0)" class="list-item-link">Services</a></li>
+          <li class="list-item portfolio"><a href="javascript:void(0)" class="list-item-link">Portfolio</a></li>
+          <li class="list-item contact"><a href="javascript:void(0)" class="list-item-link">Contact</a></li>
         </ul>
       </div>
 
@@ -127,7 +127,7 @@
         </div>
       </div>
       
-      <div id="expertise" class="section expertise h-auto">
+      <div id="skills" class="section expertise h-auto">
         
         <div class="section-inner-grid">
           <h4 class="sectionHeading small">Why Choose Me</h4>
@@ -190,7 +190,7 @@
         </div>
       </div>
       
-      <div id="qualification" class="section qualification h-auto">
+      <div id="resume" class="section qualification h-auto">
         
         <div class="section-inner-grid">
           <h4 class="sectionHeading small">My Qualification</h4>
@@ -420,7 +420,7 @@
       
       </div>
       
-      <div id="contactMe" class="section contactMe h-auto">       
+      <div id="contact" class="section contactMe h-auto">       
         <div class="section-inner-grid">
           <div class="contactMe-container section-content">
             <div class="row">
@@ -536,15 +536,62 @@
 </body>
 
 <script type="text/javascript">
-  const navbar = document.querySelector('.navbar');
-  window.addEventListener('scroll', function() {
+const navLinksArray = document.getElementsByClassName('list-item');
+const navbar = document.querySelector('.navbar');
+resetDefaults()
+document.addEventListener('scroll', navHighLighter) 
+addCLickListenerForNavLinks(navLinksArray)
+window.addEventListener('scroll', stickyNavbarTrasition)
+
+
+  function stickyNavbarTrasition() {
     if($(window).scrollTop()) {
       navbar.classList.add('sticky-nav');
     }
     else {
       navbar.classList.remove('sticky-nav');
     }
-  })
+  }
+  function addCLickListenerForNavLinks(listItemsArray) {
+    for (let i = 0; i < listItemsArray.length; i++) {
+      const listItem = listItemsArray[i]
+      listItem.addEventListener('click', () => {
+        const targetClassName = listItem.className
+        // Extracting target class name
+        const idForSearch = targetClassName.replace('list-item ', '');
+        scrollToSelectedSection(idForSearch)
+        removeActiveClassForAllLinks();
+        listItem.classList.add('active');
+      })
+      
+    }
+  }
+  function scrollToSelectedSection(targetId) {
+    console.log('scroll to', targetId)
+    let y = Math.floor(document.getElementById(targetId).offsetTop);
+    const options = {'top': y-80, 'left': 0, 'behavior': 'smooth'}
+    window.scroll(options);
+  }
+  function removeActiveClassForAllLinks() {
+    Array.from(navLinksArray).forEach((link) => {
+      link.classList.remove('active');
+    })
+  }
+  function resetDefaults() {
+    const options = {'top': 1, 'left': 0, 'behavior': 'smooth'}
+    window.scroll(options);
+  }
+  function navHighLighter(event) {
+    scrollPos = Math.floor(event.target.scrollingElement.scrollTop)
+    console.log(scrollPos)
+    for (let i = 0; i < navLinksArray.length; i++) {
+      const currLink = navLinksArray[i];
+      const targetClassName = currLink.className
+      const targetId = targetClassName.replace('list-item ', '');
+      const refElement = document.getElementById(targetId)
+    }
+  }
+
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
