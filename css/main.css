@@ -62,6 +62,9 @@ html body {
   padding: 0px;
   color: #FFFF;
   font-family: "Nunito";
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -282,6 +285,10 @@ html body {
   opacity: 1;
   -webkit-transform: translateX(5px);
           transform: translateX(5px);
+}
+
+.navbar .nav-list .list-item.active a {
+  color: #ff9644;
 }
 
 .section {

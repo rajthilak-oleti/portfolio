@@ -59,6 +59,8 @@ html body{
   padding: 0px;
   color: $primary-color;
   font-family: $primary-font;
+  transition: all .5s ease-in-out;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -221,6 +223,12 @@ html body{
           opacity: 1;
           transform: translateX(5px);
         } 
+      }
+
+      &.active{
+        a {
+          color: $accent-color;
+        }
       }
 
     }
