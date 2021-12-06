@@ -408,6 +408,7 @@ html body{
       .value {
         float: right;
         font-weight: 800;
+        display: none;
       }
     }
     .progress-track {
@@ -637,6 +638,46 @@ html body{
         }
       }
     }
+    
+  //   .portfolio-grid {
+  //     display: grid;
+  //     height: 80%;
+  //     justify-content: center;
+  //     grid-template-rows: repeat(6, 200px);
+  //     grid-template-columns: repeat(5, 200px);
+  //     grid-gap: 15px;
+  //     .portfolio-item {
+  //       background-color: $accent-color;
+  //       color: $secondary-color;
+  //       font-weight: 600;
+  //       // display: flex;
+  //       // justify-content: center;
+  //       // align-items: center;
+  //       // height: 200px;
+  //       &.small {
+  //         grid-row: span 1;
+  //         grid-column: span 1;
+  //       }
+  //       &.medium {
+  //         grid-row: span 2;
+  //         grid-column: span 2;
+  //       }
+  //       &.large {
+  //         grid-row: span 3;
+  //         grid-column: span 3;
+  //       }
+  //       &.tall {
+  //         grid-row: span 3;
+  //         grid-column: span 2;
+  //       }
+  //       &.wide {
+  //         grid-row: span 2;
+  //         grid-column: span 3;
+  //       }
+  //     }
+  //   }
+  // }
+
   }
 
   &.contactMe { 
