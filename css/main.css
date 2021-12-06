@@ -496,6 +496,7 @@ html body {
 .section.expertise .progress-container .value {
   float: right;
   font-weight: 800;
+  display: none;
 }
 
 .section.expertise .progress-track {
